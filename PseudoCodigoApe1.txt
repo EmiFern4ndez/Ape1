@@ -1,0 +1,86 @@
+Algoritmo Ape1
+
+Definir edad, ipa, apa, porter, cantPrecio, cualquiera, cantPersonas, edadesApa, contEdad Como Entero
+Definir preferencia[10] Como Caracter           //String
+Definir precio, precioProm, max, min, prom Como Real
+	
+Inicializamos las siguientes variables contadoras en 0 y por otro lado iniciamos la variables de maximo y minimo en valores muy grandes y muy chicos
+
+/* Solicitamos al usuario que ingrese sus datos, entre ellos, Su edad, Si prefiere Apa o Ipa o Porter, y el precio que le daria a la pinta */
+Mostrar (¨INGRESE TU EDAD: /n¨);
+Leer (EDAD);
+Mostrar  (¨CUAL PREFERIS: /n IPA /n APA /n PORTER /n NINGUNA /n¨);
+Leer (¨preferencia¨);
+Mostrar  (¨INGRESE EL PRECIO QUE LE DARIAS A LA PINTA /n¨);
+Leer (¨precio¨)	
+
+/* Utilizamos una estructura de control que corte cuando La edad ingresada sea mayor o igual a 45 años o cuando el precio sea menor o igual a 0  */
+Mientras (( edad <45) y (PRECIO > 0))
+
+	/* PUNTO A */
+	cantPersonas += 1;      // Incrementamos la cantidad de personas que respondieron la encuesta
+                        
+	/* PUNTO B */
+	si (preferencia = ¨APA¨)
+                edadesApa += edad;           // Guarda las edades en esta variable para sacar la edad promedio que prefiere APA
+                incrementar contEdad;
+
+        /* PUNTO C */
+        si  (edad >= 18) y (edad <=25)         // Si esta entre el rango de "joven". Si entra suma en la variable dependiendo la preferencia
+                si (preferencia = ¨IPA¨)            
+                        incrementar IPA;
+                sino si (preferencia = ¨APA¨)
+                        incrementar APA;
+                sino si (preferencia = ¨PORTER¨)
+                        incrementar PORTER
+                sino  
+                        incrementar NINGUNA
+
+                /* PUNTO D */          // En este punto calcula todo para sacar el maximo, minimo y el promedio de los precio
+                si (precio > max)
+                        max = precio;
+                sino si (precio < min)
+                        min = precio;
+                precioProm += precio;
+                cantPrecio += 1;
+
+        /* Solicita otra vez que se ingresen los datos para no hacer un bulce infinito */
+        Mostrar (¨INGRESE TU EDAD: /n¨);
+	Leer (EDAD);
+	Mostrar (¨CUAL PREFERIS: /n IPA /n APA /n PORTER /n NINGUNA /n¨);
+	Leer (¨preferencia¨);
+	Mostrar  (¨INGRESE EL PRECIO QUE LE DARIAS A LA PINTA /n¨);
+        Leer (¨precio¨)
+
+/* Imprime el tamaño de la encuesta */
+Mostrar (¨Tamaño de la muestra: %d /n, cantPersonas¨);
+
+/* Sacamos promedio de la edad que mas prefiere la cerveza APA y lo imprimimos */
+Prom = edadesApa / (real) contEdad;
+Mostrar (¨Edad promedio con preferencia APA: %.2f /n¨, prom);
+
+/* Imprimos en pantalla la cerveza preferida utilizando una estructura de control de seleccion */
+si (ipa > apa y ipa > porter y ipa > ninguna)
+        Mostrar (¨La cerveza de mayor preferencia por los jovenes: IPA /n¨);
+sino si (apa > ipa y apa > porter y apa > ninguna)
+        Mostrar (¨La cerveza de mayor preferencia por los jovenes: APA /n¨);
+sino si (porter > ipa && porter > apa && porter > ninguna)
+        Mostrar (¨La cerveza de mayor preferencia por los jovenes: PORTER /n¨);
+sino si (ninguna > ipa y ninguna > apa y ninguna > porter)
+        Mostrar (¨No hay preferencia por ninguna cerveza /n¨);
+sino (ninguna = apa y ninguna = ipa y ninguna = porter)
+        Mostrar ("Todas se prefieren por igual /n");
+
+/* Obtuvimos el maximo, el minimo y el promedio para luego mostrarlos por pantalla */
+si (cantPersonas <> 0)     
+        prom = precioProm / cantPrecio;   
+Mostrar ("Precio Maximo: %.2f ", max);        
+Mostrar ("Precio Minimo: %.2f ", min);        
+Mostrar ("Precio Promedio: %.2f ", prom);     
+    
+FIN
+
+		
+		
+	
+FinAlgoritmo
