@@ -79,8 +79,3 @@ Mostrar ("Precio Minimo: %.2f ", min);
 Mostrar ("Precio Promedio: %.2f ", prom);     
     
 FIN
-
-		
-		
-	
-FinAlgoritmo
