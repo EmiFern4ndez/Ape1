@@ -73,9 +73,11 @@ int main()
     }
     printf("Tamaño de la muestra: %d \n", cantPersonas);        //imprime en pantalla la cantidad de personas que respondieron la encuesta
 
-    prom = edadesApa / (float)contEdad;     //Saca el promedio de personas que respondieron la encuesta y les gusta la APA
-    printf("Edad promedio con preferencia APA: %.2f \n", prom);     //Imprime el promedio
-
+    if (contEdad != 0) {
+        prom = edadesApa / (float)contEdad;     //Saca el promedio de personas que respondieron la encuesta y les gusta la APA
+        printf("Edad promedio con preferencia APA: %.2f \n", prom);     //Imprime el promedio
+    }
+        
     if (ipa > apa && ipa > porter && ipa > ninguna) {       //Imprime la cerveza que mas prefieren los jovenes
         printf("Cerveza de mayor preferencia por los jóvenes: IPA\n");
     } else if (apa > ipa && apa > porter && apa > ninguna) {
@@ -86,13 +88,15 @@ int main()
         printf("No hay preferencia por ninguna cerveza\n");
     } else if (ipa == apa && apa == porter && porter == ninguna){
         printf("Todas las cervezas se prefieren por igual\n");
-    }
+    } else
+        printf("No se puede calcular la preferencia");
 
-    if (cantPersonas != 0){     //Saca el promedio de precios
-        prom = precioProm / cantPrecio;
-    }
     printf("Precio Maximo: %.2f ", max);        //Imprime el precio maximo
     printf("Precio Minimo: %.2f ", min);        //Imprime el precio minimo
-    printf("Precio Promedio: %.2f ", prom);     //Imprime el precio promedio
+    if (cantPersonas != 0){     //Saca el promedio de precios
+        prom = precioProm / cantPrecio;
+        printf("Precio Promedio: %.2f ", prom);     //Imprime el precio promedio
+    }
+    
     return 0;
 }

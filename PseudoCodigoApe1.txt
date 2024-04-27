@@ -56,8 +56,9 @@ Mientras (( edad <45) y (PRECIO > 0))
 Mostrar (¨Tamaño de la muestra: %d /n, cantPersonas¨);
 
 /* Sacamos promedio de la edad que mas prefiere la cerveza APA y lo imprimimos */
-Prom = edadesApa / (real) contEdad;
-Mostrar (¨Edad promedio con preferencia APA: %.2f /n¨, prom);
+si (contEdad <> 0)
+        Prom = edadesApa / (real) contEdad;
+        Mostrar (¨Edad promedio con preferencia APA: %.2f /n¨, prom);
 
 /* Imprimos en pantalla la cerveza preferida utilizando una estructura de control de seleccion */
 si (ipa > apa y ipa > porter y ipa > ninguna)
@@ -68,14 +69,16 @@ sino si (porter > ipa && porter > apa && porter > ninguna)
         Mostrar (¨La cerveza de mayor preferencia por los jovenes: PORTER /n¨);
 sino si (ninguna > ipa y ninguna > apa y ninguna > porter)
         Mostrar (¨No hay preferencia por ninguna cerveza /n¨);
-sino (ninguna = apa y ninguna = ipa y ninguna = porter)
+sino si(ninguna = apa y ninguna = ipa y ninguna = porter)
         Mostrar ("Todas se prefieren por igual /n");
+sino
+        Mostrar ("No se puede calcular la preferencia /n");
 
 /* Obtuvimos el maximo, el minimo y el promedio para luego mostrarlos por pantalla */
-si (cantPersonas <> 0)     
-        prom = precioProm / cantPrecio;   
 Mostrar ("Precio Maximo: %.2f ", max);        
 Mostrar ("Precio Minimo: %.2f ", min);        
-Mostrar ("Precio Promedio: %.2f ", prom);     
-    
+si (cantPersonas <> 0)     
+        prom = precioProm / cantPrecio; 
+        Mostrar ("Precio Promedio: %.2f ", prom);
+        
 FIN
