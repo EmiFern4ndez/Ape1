@@ -1,0 +1,17 @@
+a) Qué cambios implicaría en la solución si supieran que la encuesta finaliza cuando se
+hayan ingresado al predio 100 personas
+
+    Lo que cambia es la utilizacion las estructuras de control, en vez de utilizar un "while" tenemos que usar un "for". Y al momento de almacenarlo la difencia esta en que en el primer
+    caso, usariamos una lista y en la segunda opcion usariamos un vector con Dimf = 100.
+
+b) ¿Qué roles y responsabilidades individuales identifican en su equipo?
+
+    En el equipo podemos encontrarnos con varios roles, como por ejemplo:
+        Desarrollador o programador: que es el encargado de plasmar en codigo lo que le solicito el cliente o en todo caso el Product Owner. En nuestro caso seria lo que nos pide el enunciado
+        Lider Tecnico o especialista en rendimiento: que es el encargado de asegurarse que el equipo de desarrolladores apliquen buenas practicas, guiarlos en las toma de decisiones para poder tener una ejecucion y aplicacion eficiente.
+
+c) Durante el desarrollo del trabajo, surgieron conflictos (técnicos, de comunicación,
+etc) ? ¿Cómo los manejaron?
+
+    Si, durante el desarrollo del trabajo surgieron cosas que tienen que ver con lo técnico (se pudo resolver consultando con los profes e investigando) como el paso del PSeINT o pseudocodigo a C.
+    Pudimos juntarnos presencialmente y virtualmente para plantear las ideas y desarrollarlo.
